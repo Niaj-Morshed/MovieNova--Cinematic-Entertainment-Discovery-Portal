@@ -14,9 +14,10 @@
 
   <!-- 
     - custom css link
-  -->
+ 
   <link rel="stylesheet" href="./assets/css/style.css">
-
+ -->
+  
   <!-- 
     - google font link
   -->
@@ -29,11 +30,6 @@
   /*-----------------------------------*\
  * #style.css
 \*-----------------------------------*/
-
-/**
- * copyright 2022 @codewithsadee
- */
-
 
 
 
@@ -1847,7 +1843,7 @@ body.active {
       <div class="overlay" data-overlay></div>
 
       <a href="./index.html" class="logo">
-        <img src="./assets/images/logo.svg" alt="Filmlane logo">
+        MovieNova
       </a>
 
       <div class="header-actions">
@@ -1882,7 +1878,7 @@ body.active {
         <div class="navbar-top">
 
           <a href="./index.html" class="logo">
-            <img src="./assets/images/logo.svg" alt="Filmlane logo">
+            <img src="./images/logo.svg" alt="Filmlane logo">
           </a>
 
           <button class="menu-close-btn" data-menu-close-btn>
@@ -1970,7 +1966,7 @@ body.active {
 
           <figure class="movie-detail-banner">
 
-            <img src="./assets/images/movie-4.png" alt="Free guy movie poster">
+            <img src="./images/movie-4.png" alt="Free guy movie poster">
 
             <button class="play-btn">
               <ion-icon name="play-circle-outline"></ion-icon>
@@ -2050,7 +2046,7 @@ body.active {
 
             </div>
 
-            <a href="./assets/images/movie-4.png" download class="download-btn">
+            <a href="./images/movie-4.png" download class="download-btn">
               <span>Download</span>
 
               <ion-icon name="download-outline"></ion-icon>
@@ -2083,7 +2079,7 @@ body.active {
 
                 <a href="./movie-details.html">
                   <figure class="card-banner">
-                    <img src="./assets/images/series-1.png" alt="Moon Knight movie poster">
+                    <img src="./images/series-1.png" alt="Moon Knight movie poster">
                   </figure>
                 </a>
 
@@ -2119,7 +2115,7 @@ body.active {
 
                 <a href="./movie-details.html">
                   <figure class="card-banner">
-                    <img src="./assets/images/series-2.png" alt="Halo movie poster">
+                    <img src="./images/series-2.png" alt="Halo movie poster">
                   </figure>
                 </a>
 
@@ -2155,7 +2151,7 @@ body.active {
 
                 <a href="./movie-details.html">
                   <figure class="card-banner">
-                    <img src="./assets/images/series-3.png" alt="Vikings: Valhalla movie poster">
+                    <img src="./images/series-3.png" alt="Vikings: Valhalla movie poster">
                   </figure>
                 </a>
 
@@ -2191,7 +2187,7 @@ body.active {
 
                 <a href="./movie-details.html">
                   <figure class="card-banner">
-                    <img src="./assets/images/series-4.png" alt="Money Heist movie poster">
+                    <img src="./images/series-4.png" alt="Money Heist movie poster">
                   </figure>
                 </a>
 
@@ -2246,7 +2242,7 @@ body.active {
         <div class="footer-brand-wrapper">
 
           <a href="./index.html" class="logo">
-            <img src="./assets/images/logo.svg" alt="Filmlane logo">
+            <img src="./images/logo.svg" alt="Filmlane logo">
           </a>
 
           <ul class="footer-list">
@@ -2336,10 +2332,10 @@ body.active {
       <div class="container">
 
         <p class="copyright">
-          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+          &copy; 2026- All Rights Reserved | Developed by Niaj Morshed
         </p>
 
-        <img src="./assets/images/footer-bottom-img.png" alt="Online banking companies logo" class="footer-bottom-img">
+        <img src="./images/footer-bottom-img.png" alt="Online banking companies logo" class="footer-bottom-img">
 
       </div>
     </div>
@@ -2364,15 +2360,70 @@ body.active {
 
   <!-- 
     - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
 
+  <script src="./assets/js/script.js"></script>
+  -->
   <!-- 
     - ionicon link
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+  'use strict';
 
+/**
+ * navbar variables
+ */
+
+const navOpenBtn = document.querySelector("[data-menu-open-btn]");
+const navCloseBtn = document.querySelector("[data-menu-close-btn]");
+const navbar = document.querySelector("[data-navbar]");
+const overlay = document.querySelector("[data-overlay]");
+
+const navElemArr = [navOpenBtn, navCloseBtn, overlay];
+
+for (let i = 0; i < navElemArr.length; i++) {
+
+  navElemArr[i].addEventListener("click", function () {
+
+    navbar.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.classList.toggle("active");
+
+  });
+
+}
+
+
+
+/**
+ * header sticky
+ */
+
+const header = document.querySelector("[data-header]");
+
+window.addEventListener("scroll", function () {
+
+  window.scrollY >= 10 ? header.classList.add("active") : header.classList.remove("active");
+
+});
+
+
+
+/**
+ * go top
+ */
+
+const goTopBtn = document.querySelector("[data-go-top]");
+
+window.addEventListener("scroll", function () {
+
+  window.scrollY >= 500 ? goTopBtn.classList.add("active") : goTopBtn.classList.remove("active");
+
+});
+  
+  
+  </script>
 </body>
 
 </html>
